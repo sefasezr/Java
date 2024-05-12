@@ -1,5 +1,6 @@
 package d4casting_scanner_increment;
 
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Scanner05 {
@@ -20,6 +21,6 @@ public class Scanner05 {
         int firstTwoDigits = num / 1000;
         int lastTwoDigits = num % 100;
 
-        System.out.println(firstTwoDigits + lastTwoDigits);
+        System.out.println(firstTwoDigits+lastTwoDigits);
     }
 }

@@ -39,7 +39,7 @@ public class Variables01 {
         //Example 1: Create a variable for cell weight and print it to the console
 
         double cellWeight = 0.0000000000000028;
-        System.out.println(cellWeight); //2.8E-15 ==> 2.8 carpi 10 uzeri -15 demektir
+        System.out.println(cellWeight); //2.8E-15 ==> 2.8 carpi 10 uzeri -19 demektir
         //------------------------
         //7- char 2 byte’tir (16 bit). Tek karakterler icin kullanilir.
         // Sayi, sembol, harf farketmez. Data tek tirnak icine yazilir.
@@ -81,7 +81,8 @@ public class Variables01 {
         //World
 
         System.out.print("Hello ");
-        System.out.print("World");
-        //Hello World
+        System.out.print("World ");
+        System.out.println("World");
+        //Hello World World
     }
 }

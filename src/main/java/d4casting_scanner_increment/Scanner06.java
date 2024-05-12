@@ -14,6 +14,8 @@ public class Scanner06 {
         System.out.println("Yasinizi giriniz");
         int age = scanner.nextInt(); //Sayisal bir girdi aldim
 
+        scanner.nextLine(); //Kullanilmayan yeni satir karakterini okuyup atar
+
         System.out.println("Adinizi yaziniz");
         String name = scanner.nextLine(); //
 
