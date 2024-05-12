@@ -79,5 +79,8 @@ public class StringManipulations01 {
 
         boolean isStart = s.startsWith("J");
         System.out.println(isStart); //true
+
+        boolean isEnd = s.contains("y");
+        System.out.println(isEnd);
     }
 }

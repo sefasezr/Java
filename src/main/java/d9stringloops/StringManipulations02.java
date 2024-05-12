@@ -13,6 +13,7 @@ public class StringManipulations02 {
 
         String s = "yusuf";
 
+
         if (s.indexOf("y") == s.lastIndexOf("y")){
             System.out.print("y");
         }
@@ -32,7 +33,7 @@ public class StringManipulations02 {
         //           1234 6789 1234 6789 ==> **** **** **** 6789
 
         String cardNum = "1234 6789 1234 6789";
-        String first = cardNum.substring(0, 15).replaceAll("[0-9]", "*");
+        String first = cardNum.substring(0, 15).replaceAll("[1-9]", "*");
         System.out.println(first); //**** **** ****
 
         String last = cardNum.substring(15);

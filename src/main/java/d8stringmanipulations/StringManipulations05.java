@@ -17,5 +17,18 @@ public class StringManipulations05 {
         //2.yol: Dinamik
         String company1 = a.split("@")[1].split("\\.")[0];
         System.out.println(company1);
+
+        //3.Yol: Dinamik
+
+        //indexOf() method'u spesifik bir karakterin ilk gorunumunun index'ini verir
+        //Bu method olmayan karakterler icin -1 verir
+        int startingIndex = a.indexOf("@");
+        int endingIndex = a.indexOf(".");
+        System.out.println(a.substring(startingIndex+1,endingIndex));
+
+
+        //4.Yol: Kendim bu da dinamik.
+        int ilk = a.indexOf("gmail");
+        System.out.println(a.substring(ilk,ilk+5));
     }
 }

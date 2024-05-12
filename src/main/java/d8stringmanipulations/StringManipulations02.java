@@ -24,6 +24,8 @@ public class StringManipulations02 {
             Space karakteri haric  : \\S
             Sadece rakamlar        : \\d  (digit ten geliyor)
             Rakamlar haric         : \\D
+            Rakam ve Harfler       : \\w
+            Rakam ve Harf Hariç    : \\W
         */
 
         //Ornek 1: s String’indeki tum rakamlari(0, 1, 2, 3, 4, 5, 6, 7, 8, 9) "*" a ceviriniz.
@@ -32,8 +34,10 @@ public class StringManipulations02 {
         String s = "Learn Java earn 1234 money";
 
         String s3 = s.replaceAll("[0-9]", "*");
+        String s4 = s.replaceAll("\\d","*");
 
         System.out.println(s3); //Learn Java earn **** money
+        System.out.println(s4); //Learn Java earn **** money
         //--------------------------
         //Ornek 2: "s" String'indeki rakam sayisini bulunuz.
         //Example 2: Find the number of digits in String "s"
@@ -41,7 +45,9 @@ public class StringManipulations02 {
         //Rakam haric her seyi silip, geri kalanlari sayalim
 
         int num = s.replaceAll("[^0-9]", "").length(); //method chain
+        int num2 = s.replaceAll("\\D","").length();
         System.out.println(num); //4
+        System.out.println(num2);//4
 
     }
 }

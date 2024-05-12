@@ -28,13 +28,15 @@ public class StringManipulations04 {
         //split() String'i istediginiz karakterden parcalamaya yarar.
         //Not: Bir satirda, birden fazla methodu yanyana kullanirsaniz buna "method chain (zincir)" denir
 
-        String name = "   aLI  cAN  ";
-        char first = name.trim().toUpperCase().charAt(0);
-        System.out.println(first); //A
+        String name ="    aLi    cAN    ";
+        char firstChar = name.trim().toUpperCase().charAt(0);
+        char secondNameFirstChar = name.trim().toUpperCase().split("\\s+")[1].charAt(0);
+        System.out.println("First char: " + firstChar);
+        System.out.println("Second char: " + secondNameFirstChar);
 
-        char last = name.trim().toUpperCase().split("\\s+")[1].charAt(0);
-        System.out.println(last); //C
-
-        System.out.println("" + first + last); //AC
+        // Eger Ali Can isminin araasindaki bosluk sayisi 1 degil de daha fazla olsaydi
+        // split() methodu sasirmasin diye splitin icini
+        name.split("\\s+"); // gibi duzenledigimizde sasirmasini engelliyoruz ve
+        // aradaki boslukları butun olarak goruyor
     }
 }
