@@ -1,4 +1,4 @@
-package day01;
+package practice01;
 
 public class C02_Ortalama {
     public static void main(String[] args) {
