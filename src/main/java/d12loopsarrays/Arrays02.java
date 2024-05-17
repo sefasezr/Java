@@ -17,9 +17,9 @@ public class Arrays02 {
         for (int i = 0; i < ages.length; i++) {
             ages[i]=scan.nextInt();
         }
-        Integer max = Integer.MIN_VALUE;   // Max degere minimum deger vererek kullanicidan alacagim en kucuk
+        int max = Integer.MIN_VALUE;   // Max degere minimum deger vererek kullanicidan alacagim en kucuk
                                            // degeri bile daha buyuk gostererek max degere hep daha buyuk deger bulacagim
-        Integer min = Integer.MAX_VALUE;
+        int min = Integer.MAX_VALUE;
 
         for(int i = 0; i < ages.length; i++){
             if(ages[i]<min){
