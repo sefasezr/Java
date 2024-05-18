@@ -19,6 +19,8 @@ public class Md01 {
         a[2][0] = 123;
         a[2][1] = 0;
 
+        //cok boyutlu diziler...
+
         //System.out.println(Arrays.toString(a));
 
         //MultiDimensional Array'leri yazdirirken toString() degil, deepToString() method'u kullaniriz
