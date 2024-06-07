@@ -1,3 +1,6 @@
+package KahveMak;
+
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class KahveMakinesiApp {
@@ -39,6 +42,7 @@ public class KahveMakinesiApp {
                     System.out.println("Hatalı tuşlama yaptınız.");
                     continue;
             }
+            int kacSeker=0;
             // Seçilen kahvenin hazırlanmasını sağlıyorum.
             System.out.println(kahve.hazirla());
 
@@ -51,12 +55,26 @@ public class KahveMakinesiApp {
             siparisOzellikleri.setSut(sut);
 
             // Kullanıcıya şeker eklemek isteyip istemediğini soruyorum.
+            int sayac =0;
             System.out.println("Şeker ister misiniz? (Evet veya hayır cevabını veriniz):");
             String seker = sc.nextLine().toLowerCase();
             if (seker.equals("evet")) {
                 // Kullanıcı şeker istiyorsa, kaç şeker eklemek istediğini soruyorum.
-                System.out.println("Kaç şeker olsun?");
-                int kacSeker = sc.nextInt();
+
+                while(sayac<1){
+                    System.out.println("Kaç şeker olsun?");
+                    sc.nextLine();
+                try {
+                    kacSeker = sc.nextInt();
+
+                } catch (InputMismatchException e) {           // ArithmeticException problemin türüdür.
+                    System.out.println("Sayi girilmesi gereken yere sayi dısında giris yapmayin");
+                }
+                if(kacSeker!=0){
+                    sayac++;
+                }
+                }
+
                 sc.nextLine();  // Bu özelliğe Dummy line - int girdisinden sonra string girdisi alabilmek için boş bir nextLine koyuyorum.
                                 // Bunu koymazsak hata oluyor, direk diğer satırı okuyor.
                 siparisOzellikleri.setSeker(seker, kacSeker);

@@ -27,11 +27,13 @@ public class PerfectNumber {
                 if (i % j == 0) {
                     toplam+=j;
                 }
-                if (toplam==i){
-                    mukemmelSayi.add(i);
                 }
+            if (toplam==i){
+                mukemmelSayi.add(i);
             }
             toplam=0;
+
         }
+        System.out.println(mukemmelSayi);
     }
 }

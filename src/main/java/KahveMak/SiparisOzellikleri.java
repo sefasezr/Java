@@ -1,3 +1,4 @@
+package KahveMak;
 
 public class SiparisOzellikleri {
     private String sut;
