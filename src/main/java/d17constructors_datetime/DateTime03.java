@@ -29,7 +29,6 @@ public class DateTime03 {
             if(month <1 || month>12){
                 System.out.println("Ay 1 ile 12 arasinda olmalidir. Tekrar deneyiniz");
                 continue; // Kullanicini dongunun basina goturur
-
             }
             System.out.println("Lutfen gunu giriniz");
             int day = input.nextInt();
