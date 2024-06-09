@@ -101,6 +101,22 @@ public class Sb01 {
         sb3.append("Java");
         System.out.println(sb3.capacity());  //3*2+2=8
 
+        StringBuilder sb4 = new StringBuilder();
+        System.out.println(sb4.length());   //0
+        System.out.println(sb4.capacity()); //16
+
+        sb4.append("Java");
+        System.out.println(sb4.length());
+        System.out.println(sb4.capacity());
+
+        sb4.append("axxxxxxxxxxxxxxxxxxxaxxxxxxxxxxxxxxxxxxx");
+        System.out.println(sb4.length());
+        System.out.println(sb4.capacity());
+        //Normalde kapasiteyi geçince kapasite*2+2 yapardi ancak carpilmis hali bile gecerse artik length kadar kapasite acilir
+        sb4.append("a");
+        System.out.println(sb4.capacity());  //tabi sonraki eklemede yine kapasite*2+2 gecerli oluyor
+
+
 
 
 
