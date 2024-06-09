@@ -7,7 +7,12 @@ public class Vehicle {
 
     //Constructor olusturalim
     public Vehicle(){
+        this("Honda",2024,"Elektrikli");  //3- object class'in constructor'ini cagirir
         System.out.println("Honda, 2023, Benzin");
+    }
+    public Vehicle(String marka,int yil,String motor){
+        super();
+        System.out.println("Honda, 2024, Elektrikli");
     }
 
     //Super cagrisi childdan parente dogru cagirir
