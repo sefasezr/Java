@@ -44,6 +44,10 @@ public class AudiA4 implements Engine, AC, Brake {
         System.out.println("AudiA4 esp fren kullanir");
     }
 
+    public void run(){
+        System.out.println("Audi A4 havayastigi calistirir");
+    }
+
 
 
 
