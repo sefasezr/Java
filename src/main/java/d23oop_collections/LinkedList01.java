@@ -126,12 +126,58 @@ public class LinkedList01 {
         myList.add(3,"Yusuf");
         System.out.println(myList);   //[Hasan, Zeynep, Veli, Yusuf, Ayşe, Fatma, Huseyin, Yusuf]
 
-        //myList.removeFirstOccurrence("Yusuf");
-        //System.out.println(myList);   //[Hasan, Zeynep, Veli, Ayşe, Fatma, Huseyin, Yusuf]
+        myList.removeFirstOccurrence("Yusuf");
+        System.out.println(myList);   //[Hasan, Zeynep, Veli, Ayşe, Fatma, Huseyin, Yusuf]
 
         //myList.removeAll(Collections.singleton("Yusuf"));  // Tum yusuflari sildirdi Collections.singleton() ile
         //System.out.println(myList);  //[Hasan, Zeynep, Veli, Ayşe, Fatma, Huseyin]
 
+        //--------------------------------
+        //7) removeLastOccurrence metodu, belirtilen bir öğeyi LinkedList içinde
+        //sondan başlayarak arar ve bu öğeyi bulduğunda onu listeden kaldırır.
+        //Eğer bu öğe birden fazla kez bulunuyorsa, en sondaki öğe kaldırılır.
+        //Eğer belirtilen öğe listede bulunmuyorsa, herhangi bir değişiklik yapmaz ve liste aynı kalır.
+
+        myList.removeLastOccurrence("Yusuf");
+        System.out.println(myList);   //[Hasan, Zeynep, Veli, Ayşe, Fatma, Huseyin]
+
+        //removeLast() nedir?
+
+        myList.removeLast();
+        System.out.println(myList);   //[Hasan, Zeynep, Veli, Ayşe, Fatma]
+        // Sondaki değeri siler...
+
+        //------------------------------
+        //8) peek() metodu, bir koleksiyonun ilk elemanına erişmek için kullanılır
+        // Bu metod, elemanı koleksiyondan kaldırmaz
+        // Bu metod, koleksiyon boşsa null dondurur
+
+        String s = myList.peek();
+        System.out.println(s);   //Hasan
+        System.out.println(myList);   //[Hasan, Zeynep, Veli, Ayşe, Fatma]
+
+        //-------------------------------
+        //9)poll() metodu, bir koleksiyonun başındaki elemanı alır ve koleksiyondan kaldırır
+        //Bu metod, koleksiyon boşsa null dondurur
+
+        System.out.println(myList.poll());  //Hasan yazdirildi ve hasan silindi
+        System.out.println(myList);     //[Zeynep, Veli, Ayşe, Fatma]
+
+        //-------------------------------
+        //10) element() metodu, bir koleksiyonun başındaki elemanı alır , ancak elemanı koleksiyondan kaldırmaz
+        // Bu metod, koleksiyon boşsa NoSuchElementException istisnası atar. (peek() null dondurur)
+        // bir koleksiyonun boş olup olmadigini kontrol etmek için NoSuchElementException istisnasını kullanır
+
+        System.out.println(myList.element());  //Zeynep   elemanı kaldırmaz ilk elemanı alir
+        System.out.println(myList);      //[Zeynep, Veli, Ayşe, Fatma]
+
+        //11) pop() metodu, bir koleksiyonun ilk elemanını alır ve koleksiyondan kaldırır
+        //Bu metod, koleksiyon boşsa NoSuchElementException istisnası atar. (poll() null dondurur)
+
+        System.out.println(myList.pop()); //Zeynep
+        System.out.println(myList);     //[Veli, Ayşe, Fatma]
+
+        //12) clear() tamamını siler
 
 
 
