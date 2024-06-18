@@ -1,5 +1,8 @@
 package d26maps_exceptions;
 
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
+
 public class Maps01 {
     public static void main(String[] args) {
 
@@ -84,5 +87,107 @@ public class Maps01 {
         (Web sunucuları, veri işlem sistemleri, yüksek trafikli uygulamalar)
         Thread safety ve performansın önemli olduğu her durumda tercih edilir.*/
         //---------------------
+
+        Hashtable <String,Integer> studentGrades = new Hashtable<>();
+
+        studentGrades.put("Selma",70);
+        studentGrades.put("Tuba",75);
+        studentGrades.put("İbrahim",85);
+        studentGrades.put("Sefa",87);
+        //studentGrades.put(null,50);  //HATAYA SEBEP OLUR
+        //studentGrades.put("Ahmet",null); HATA
+
+        HashMap<String,Integer> stdAges = new HashMap<>();
+        stdAges.put("Ali",18);
+        stdAges.put("Ahmet",41);
+        stdAges.put(null,41);
+        stdAges.put(null,39);
+        stdAges.put("a",null);
+        stdAges.put("b",null);
+        System.out.println(stdAges);  //{null=39, Ahmet=41, a=null, b=null, Ali=18}
+
+        //ConcurrentHashMap oluşturma
+
+        ConcurrentHashMap<String,Integer> stock = new ConcurrentHashMap<>();
+
+        // Eleman ekleme
+        stock.put("Elma",10);
+        stock.put("Muz",20);
+
+        //Elemana erişme
+        System.out.println("Elmanın stok miktari : "+stock.get("Elma"));
+
+        //Guncelleme veya ekleme
+        stock.putIfAbsent("Cilek",30); //Çilek yoksa ekle
+        System.out.println(stock);  //{Muz=20, Elma=10, Cilek=30}
+
+        stock.replace("Muz",20,25); // Muz 20 taneyse 25 yap
+        System.out.println(stock);  //{Muz=25, Elma=10, Cilek=30}
+
+        //Eleman silme
+        stock.remove("Elma");
+        System.out.println(stock); //{Muz=25, Cilek=30}
+
+        //Stock'lari yazdirma
+
+        for(Map.Entry<String,Integer> entry : stock.entrySet()){
+            String key = entry.getKey();
+            Integer value = entry.getValue();
+            System.out.println(key+" stok miktari : "+value);
+        }
+        //Muz stok miktari : 25
+        //Cilek stok miktari : 30
+        //----------------------------------------
+        /*
+        1) Treemap’ler entry’leri natural order’a gore siraya koyar, bu yuzden yavastirlar
+        2) Treemap’ler thread-safe ve synchronized degildir.
+        3) Treemap’lerin key’lerinde null kullanilamaz (Comparator istisnasi var ama onerilmez),
+        ama value kisimlarinda istediginiz kadar kullanabilirsiniz
+        4) Treemapler key’e bakarak siralama yapar
+         */
+
+        TreeMap<String,Integer> countryPopulation = new TreeMap<>();
+        countryPopulation.put("Germany", 83000000);
+        countryPopulation.put("USA", 400000000);
+        countryPopulation.put("Turkiye", 83000000);
+        countryPopulation.put("Netherland", 18000000);
+        //countryPopulation.put(null, 20000000); //HATA
+        countryPopulation.put("Italy", null);
+        countryPopulation.put("France", null);
+        System.out.println(countryPopulation);
+        //{France=null, Germany=83000000, Italy=null, Netherland=18000000, Turkiye=83000000, USA=400000000}
+
+        //NOT: TreeMap'ler natural order siralama yaptigindan ve eleman eklemede
+        // "key"lere baktigindan key'lerde null kabul etmez.
+
+        System.out.println("--------------------------------");
+
+        /*LinkedHashMap, HashMap'e benzer, ancak ekleme sırasına göre sıralanmış bir şekilde verileri tutar.
+        Yani, LinkedHashMap verileri eklediğiniz sırayla tutar ve bu sırayı korur.
+        Bu nedenle, verileri eklediğiniz sırayla geri almanız gerektiğinde kullanışlı olabilir.
+
+        **ornegin,bir takvim uygulamasında, etkinlikleri tarih sırasına göre tutmak için kullanılabilir.
+        yada bir restoranın sipariş alım sistemi düşünün. Müşterilerin siparişlerini verme sırası,
+        restoranın sipariş hazırlama sırasını belirler.
+
+        Aynı mantık, müşteri hizmetleri çağrı merkezleri, sırayla hizmet veren işletmeler veya
+        benzeri senaryolarda da kullanılabilir.
+        Müşteri veya işlem sıralarını takip etmek için LinkedHashMap tercih edilebilir.
+        LinkedHashMap sınıfı thread-safe degildir*/
+
+        LinkedHashMap<String,Integer> lhm = new LinkedHashMap<>();
+
+        lhm.put("Ali",25);
+        lhm.put("Can",18);
+        lhm.put("Mehmet",30);
+        for (Map.Entry<String,Integer> w : lhm.entrySet()){
+            System.out.println(w.getKey()+" -> "+w.getValue());
+        }
+        //Ali -> 25
+        //Can -> 18
+        //Mehmet -> 30 - insertion order
+
+
+
     }
 }
