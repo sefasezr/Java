@@ -97,5 +97,16 @@ public class Iterators {
             System.out.print(el+" ");
         }
 
+        List <String> myList3 = new ArrayList<>(Arrays.asList("Ali","Can","Aliye"));
+        ListIterator<String> myListItr3 = myList3.listIterator();
+
+        while(myListItr3.hasNext()){
+            String el = myListItr3.next();
+            if(el.equals("Ali")){
+                myListItr3.add("Messi");
+            }
+        }
+        System.out.println(myList3);
+
     }
 }

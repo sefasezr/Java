@@ -18,6 +18,13 @@ public class Lambda02 {
         minimum2(nums);
 
     }
+    //-----------------------------
+    //ornek 2: Bir tamsayı listesi alan ve listedeki tek sayıların karelerini, aynı satırda,
+    // aralarına boşluk koyarak yazdıran bir method oluşturunuz.(Functional)
+    //example 2: Create a method that takes a list of integers and prints the squares of
+    // the odd numbers in the list on the same line with a space between them.(Functional)
+
+    //map(): Elemanları dönüştürmek için kullanılır.
 
     public static void printSquareOfOddElements(List<Integer> nums) {
 
