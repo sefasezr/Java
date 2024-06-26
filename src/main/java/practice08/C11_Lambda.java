@@ -23,15 +23,18 @@ public class C11_Lambda {
         List<String>yeniList=yedidenCokBuyuk(mylist);
         System.out.println(yeniList);
         //11) Bir List'te karakter sayisi 7’den az olan tum elemanlari
-// tekrarsiz olarak console'a Buyuk harflerle yazdiran method'u olusturunuz.
+        // tekrarsiz olarak console'a Buyuk harflerle yazdiran method'u olusturunuz.
     }
 
     private static void yedidenAzTekrarsizBuyuk(List<String> mylist) {
+        mylist.stream().distinct().filter(t->t.length()<7).map(String::toUpperCase).forEach(System.out::println);
     }
+    //12) Bir List'teki karakter sayisi 7 ve 7’den cok olan tum elemanlari
+    // buyuk harflerle bir listin icinde veren method'u olusturunuz.
 
     private static List<String> yedidenCokBuyuk(List<String> mylist) {
-        return mylist;
-        //Şimdilik böyle maçtan sonra devam...
+        return mylist.stream().filter(t->t.length()>=7).map(String::toUpperCase).toList();
+
     }
 
 
