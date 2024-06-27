@@ -113,7 +113,7 @@ public class Lambda03 {
             b=temp;
         }
 
-        return IntStream.range(a+1,b).filter(Utils::print).sum();
+        return IntStream.range(a+1,b).filter(Utils::ciftMi).sum();
     }
 
 

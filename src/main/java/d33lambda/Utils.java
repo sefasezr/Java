@@ -1,4 +1,4 @@
-package d31lambda;
+package d33lambda;
 
 public class Utils {
 
@@ -34,6 +34,12 @@ public class Utils {
         }
         return toplam;
 
+    }
+    public static boolean bestenBuyukMu(int num){
+        return num > 5;
+    }
+    public static Double yarisiniAl(int num){
+        return (double)num/2;
     }
 
 }
