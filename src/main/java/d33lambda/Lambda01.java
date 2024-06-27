@@ -20,6 +20,7 @@ public class Lambda01 {
         farkliCiftSayiKareToplam(list);
         farkliCiftSayiKupCarpim(list);
         farkliTersSirala(list);
+        maxDeger(list);
     }
 
     //1)List'in elemanlarini aralarinda bosluk birakarak yanyana yazdır.
@@ -55,5 +56,13 @@ public class Lambda01 {
     private static void farkliTersSirala(List<Integer>list) {
         List<Double> a = list.stream().distinct().filter(t->t>5&&t%2==0).map(Utils::yarisiniAl).sorted(Comparator.reverseOrder()).collect(Collectors.toList());
         System.out.println(a);
+    }
+
+    //8)Listteki en buyuk elemani bul.
+    private static void maxDeger(List<Integer>list) {
+        int max = list.stream().reduce(Math::max).get();
+        System.out.println(max);
+
+        list.stream().sorted(Comparator.reverseOrder()).limit(1).forEach(Utils::printInTheSameLineWithSpace);
     }
 }
